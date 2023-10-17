@@ -29,11 +29,11 @@ export const menuSlide = {
 
 export const slide = {
   initial: { x: 80 },
-  enter: (i) => ({
+  enter: (i: number) => ({
     x: 0,
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
   }),
-  exit: (i) => ({
+  exit: (i: number) => ({
     x: 80,
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
   }),
