@@ -39,7 +39,7 @@ export default function Categories() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, x: 200 }}
+            initial={{ opacity: 0, scale: 0.5, x: 150 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
@@ -55,7 +55,7 @@ export default function Categories() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, x: -200 }}
+            initial={{ opacity: 0, scale: 0.5, x: -150 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
