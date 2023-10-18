@@ -62,7 +62,8 @@ export default function Hero() {
             />
 
             <motion.div
-              whileInView={{ scale: [0, 1], opacity: [0, 1] }}
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
               className="lg:block hidden absolute top-[10%] -left-[10%] p-4 bg-white rounded-2xl rounded-br-none shadow-lg"
