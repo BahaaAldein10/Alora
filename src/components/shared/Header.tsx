@@ -2,6 +2,7 @@
 
 import { navLinks } from "@/constants";
 import { UserButton } from "@clerk/nextjs";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +41,7 @@ function Header() {
       {/* =======| ICONS |======= */}
       <div className="flex items-center gap-4">
         <Link href="/checkout">
-          <Image src="/elements/cart.png" alt="cart" width={24} height={24} />
+          <ShoppingCart size={28} />
         </Link>
 
         <UserButton afterSignOutUrl="/" />
