@@ -1,8 +1,7 @@
-import { createUser } from "@/lib/actions/user.actions";
-import { clerkClient } from "@clerk/nextjs";
+import { createOrUpdateUser, deleteUser } from "@/lib/actions/user.actions";
+import { handleError } from "@/lib/utils";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
-import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 
 export async function POST(req: Request) {
@@ -54,29 +53,37 @@ export async function POST(req: Request) {
   // Get the ID and type
   const eventType = evt.type;
 
-  if (eventType === "user.created") {
+  if (eventType === "user.created" || eventType === "user.updated") {
     const { id, email_addresses, username, first_name, last_name, image_url } =
       evt.data;
 
-    const user = {
-      clerkId: id,
-      email: email_addresses[0].email_address,
-      username: username!,
-      firstName: first_name,
-      lastName: last_name,
-      imageUrl: image_url,
-    };
-
-    const newUser = await createUser(user);
-
-    if (newUser) {
-      await clerkClient.users.updateUserMetadata(id, {
-        publicMetadata: {
-          userId: newUser._id,
-        },
+    try {
+      await createOrUpdateUser({
+        id,
+        email_addresses,
+        username,
+        first_name,
+        last_name,
+        image_url,
       });
-    }
 
-    return NextResponse.json({ message: "OK", user: newUser });
+      return new Response("User is created or updated!", { status: 200 });
+    } catch (error) {
+      handleError(error);
+      return new Response("Error occured!", { status: 500 });
+    }
+  }
+
+  if (eventType === "user.deleted") {
+    const { id } = evt.data;
+
+    try {
+      await deleteUser(id);
+
+      return new Response("User is deleted!", { status: 200 });
+    } catch (error) {
+      handleError(error);
+      return new Response("Error occured!", { status: 500 });
+    }
   }
 }
