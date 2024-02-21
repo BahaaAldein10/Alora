@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -24,8 +24,16 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        black: "#000000",
+        white: "#FFFFFF",
+        grey: {
+          600: "#545454", // Subdued - color name in figma
+          500: "#757575",
+          400: "#AFAFAF", // Disabled - color name in figma
+          50: "#F6F6F6", // White Grey - color name in figma
+        },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#ff0040",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -53,6 +61,10 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        "hero-banner": "url('/banners/hero_banner.jpg')",
+        "footer-banner": "url('/img/footer-texture.png')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -75,6 +87,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
