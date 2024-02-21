@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { connectToDatabase } from "../database/connectDB";
 import User from "../database/models/user.model";
 import { handleError } from "../utils";
@@ -48,6 +49,7 @@ export async function deleteUser(id: string | undefined) {
     await connectToDatabase();
 
     await User.findOneAndDelete({ clerkId: id });
+    revalidatePath("/");
   } catch (error) {
     handleError(error);
   }
