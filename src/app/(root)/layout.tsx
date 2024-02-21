@@ -1,5 +1,7 @@
+import Categories from "@/components/shared/Categories";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
+import Services from "@/components/shared/Services";
 
 export default function RootLayout({
   children,
@@ -12,6 +14,8 @@ export default function RootLayout({
         <Header />
         {children}
       </main>
+      <Services />
+      <Categories />
       <Footer />
     </div>
   );

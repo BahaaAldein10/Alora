@@ -8,9 +8,7 @@ export default function Home() {
       <div className="grid grid-cols-2">
         {/* =======| TITLE |======= */}
         <div className="pt-20">
-          <h2 className="text-[1.2rem] text-primary">
-            Trend Fashion
-          </h2>
+          <h2 className="text-[1.2rem] text-primary">Trend Fashion</h2>
           <h1 className="text-[2.5rem]">
             Explore Amazing
             <br />
