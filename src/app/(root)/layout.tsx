@@ -1,4 +1,5 @@
 import Categories from "@/components/shared/Categories";
+import Featured from "@/components/shared/Featured";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import Services from "@/components/shared/Services";
@@ -16,6 +17,7 @@ export default function RootLayout({
       </main>
       <Services />
       <Categories />
+      <Featured />
       <Footer />
     </div>
   );
