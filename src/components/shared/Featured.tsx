@@ -12,7 +12,7 @@ function Featured() {
         {/* =======| GRID |======= */}
         <div className="grid grid-cols-4 gap-4">
           {features.map((feature) => (
-            <div>
+            <div key={feature.name}>
               <div className="h-[400px] rounded-2xl">
                 <Image
                   src={feature.image}
