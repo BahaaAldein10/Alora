@@ -7,7 +7,7 @@ function Services() {
       <div className="m-auto py-4 w-[80%]">
         <div className="grid grid-cols-4 gap-4">
           {services.map((service) => (
-            <div className="p-2 bg-white rounded-2xl shadow-lg">
+            <div key={service.title} className="p-2 bg-white rounded-2xl shadow-lg">
               <div className="flex justify-center items-center gap-2">
                 <Image
                   src={service.image}
