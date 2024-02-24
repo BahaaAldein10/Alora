@@ -11,8 +11,8 @@ function Featured() {
 
         {/* =======| GRID |======= */}
         <div className="grid grid-cols-4 gap-4">
-          {features.map((feature) => (
-            <div key={feature.name}>
+          {features.map((feature, index) => (
+            <div key={`feature-${index}`}>
               <div className="h-[400px] rounded-2xl">
                 <Image
                   src={feature.image}
@@ -27,9 +27,9 @@ function Featured() {
                 <h1 className="mt-4 text-base">{feature.name}</h1>
 
                 <div className="flex gap-1 mt-2">
-                  {[...Array(4)].map(() => (
+                  {[...Array(4)].map((_, index) => (
                     <Image
-                      key={feature.name}
+                      key={`star-${index}`}
                       src="/elements/star.png"
                       alt="star"
                       width={16}

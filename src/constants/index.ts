@@ -27,22 +27,22 @@ export const navLinks = [
 
 export const services = [
   {
-    title: "Free Shipping",
+    name: "Free Shipping",
     description: "free shipping on all orders",
     image: "/services/fast-delivery.png",
   },
   {
-    title: "Money Guarantee",
+    name: "Money Guarantee",
     description: "30-day money-back guarantee",
     image: "/services/checked.png",
   },
   {
-    title: "Online Support 24/7",
+    name: "Online Support 24/7",
     description: "24/7 Technical Support",
     image: "/services/support.png",
   },
   {
-    title: "Secure Payment",
+    name: "Secure Payment",
     description: "all cards accepted",
     image: "/services/secure-payment.png",
   },
@@ -161,48 +161,122 @@ export const sales = [
     name: "A Vintage Timeless Glamour",
     image: "/dresses/6.jpg",
     price: 615,
-    sale: 30,
+    sale: 600,
   },
   {
     name: "Futuristic Fantasy",
     image: "/dresses/3.jpg",
     price: 400,
-    sale: 23,
+    sale: 380,
   },
   {
     name: "Glamour High-Waisted Trousers",
     image: "/bottoms/4.jpg",
     price: 41,
-    sale: 10,
+    sale: 35,
   },
   {
     name: "Metropolitan Chic",
     image: "/makeup/2.jpg",
     price: 34,
-    sale: 6,
+    sale: 30,
   },
   {
     name: "Timeless Treasures Watch",
     image: "/accessories/5.jpg",
     price: 65,
-    sale: 14,
+    sale: 60,
   },
   {
     name: "Timeless Tuxedo Leggings",
     image: "/bottoms/6.jpg",
     price: 48,
-    sale: 10,
+    sale: 45,
   },
   {
     name: "Cityscape Adventure Backpack",
     image: "/accessories/2.jpg",
     price: 100,
-    sale: 18,
+    sale: 90,
   },
   {
     name: "Futuristic Fusion Boots",
     image: "/shoes/7.jpg",
     price: 30,
-    sale: 4,
+    sale: 25,
+  },
+];
+
+export const testemonials = [
+  {
+    name: "John Doe",
+    image: "/testemonials/1.jpg",
+    occupation: "Software Engineer",
+    comment:
+      "Transformative web app, intuitive interface, powerful features, highly recommended!",
+  },
+  {
+    name: "Jane Smith",
+    image: "/testemonials/2.jpg",
+    occupation: "Marketing Manager",
+    comment:
+      "Exceeded expectations, robust functionality, user-friendly design, indispensable.",
+  },
+  {
+    name: "Alex Tom",
+    image: "/testemonials/3.jpg",
+    occupation: "Entrepreneur",
+    comment:
+      "Impressive, streamlines business operations, improves productivity, essential tool.",
+  },
+];
+
+export const socials = [
+  {
+    name: "facebook",
+    image: "/socials/facebook.png",
+  },
+  {
+    name: "twitter",
+    image: "/socials/twitter.png",
+  },
+  {
+    name: "instagram",
+    image: "/socials/instagram.png",
+  },
+  {
+    name: "linkedin",
+    image: "/socials/linkedin.png",
+  },
+  {
+    name: "gmail",
+    image: "/socials/gmail.png",
+  },
+];
+
+export const sideBar = [
+  {
+    name: "All",
+    image: "/elements/select.png",
+  },
+  {
+    name: "Dresses",
+    image: "/elements/dress.png",
+  },
+  {
+    name: "Bottoms",
+    image: "/elements/skirt.png",
+  },
+  {
+    name: "Makeup",
+    image: "/elements/makeup.png",
+  },
+  {
+    name: "Shoes",
+    image: "/elements/shoes.png",
+  },
+  {
+    name: "Accessories",
+    image: "/elements/necklace.png",
   },
 ];

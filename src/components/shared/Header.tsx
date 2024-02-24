@@ -22,11 +22,11 @@ function Header() {
       {/* =======| NAVBAR |======= */}
       <SignedIn>
         <ul className="lg:flex hidden items-center gap-2">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isActive = pathName === link.route;
 
             return (
-              <li key={link.route} className="relative p-2">
+              <li key={`link-${index}`} className="relative p-2">
                 <Link
                   href={link.route}
                   className={`${

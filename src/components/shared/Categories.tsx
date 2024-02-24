@@ -6,9 +6,9 @@ function Categories() {
     <section id="categories">
       <div className="m-auto py-4 w-[80%]">
         <div className="grid grid-cols-4 gap-4">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <div
-              key={category.name}
+              key={`category-${index}`}
               className={`${
                 category.colSpan ? "col-span-2" : ""
               } w-full h-[300px] rounded-2xl`}
