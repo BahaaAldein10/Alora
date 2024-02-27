@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="flex justify-center items-end w-full h-[60vh] bg-footer-banner bg-background"
+      className="flex justify-center items-end w-full sm:h-[60vh] bg-footer-banner bg-background"
     >
       <div className="container">
         {/* =======| LOGO |======= */}
