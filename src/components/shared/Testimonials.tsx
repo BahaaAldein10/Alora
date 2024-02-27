@@ -5,33 +5,33 @@ import Title from "./Title";
 function Testimonials() {
   return (
     <section id="testimonials">
-      <div className="m-auto w-[80%]">
+      <div className="container">
         {/* =======| TITLE |======= */}
         <Title mainTitle="Customer" subTitle="Testimonials" />
 
         {/* =======| CARDS |======= */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           {testemonials.map((testemonial, index) => (
             <div
               key={`testemonial-${index}`}
-              className="relative p-5 bg-white rounded-2xl shadow-md"
+              className="relative p-5 bg-white rounded-2xl shadow-lg"
             >
               <div className="flex items-center gap-4 w-full">
                 <Image
                   src={testemonial.image}
                   alt={testemonial.name}
-                  width={60}
-                  height={60}
+                  width={80}
+                  height={80}
                   className="rounded-full"
                 />
 
                 <div>
-                  <h1 className="text-[1.5rem]">{testemonial.name}</h1>
-                  <h2 className="text-base">{testemonial.occupation}</h2>
+                  <h1 className="text-1.5">{testemonial.name}</h1>
+                  <h2 className="text-1">{testemonial.occupation}</h2>
                 </div>
               </div>
 
-              <h3 className="mt-4 text-base text-[#333333]">
+              <h3 className="mt-4 text-1 text-[#333333]">
                 {testemonial.comment}
               </h3>
 

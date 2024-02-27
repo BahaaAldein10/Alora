@@ -11,10 +11,10 @@ import Title from "./Title";
 
 function Sales() {
   return (
-    <section id="sales">
-      <div className="m-auto w-[80%]">
+    <section id="sales" className="w-full">
+      <div className="container">
         {/* =======| BANNER |======= */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-5">
           <Image
             src="/banners/sales_banner.png"
             alt="sales_banner"
@@ -28,7 +28,20 @@ function Sales() {
 
         {/* =======| GRID |======= */}
         <Swiper
-          slidesPerView={4}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
           spaceBetween={16}
           loop={true}
           navigation={true}
@@ -39,8 +52,8 @@ function Sales() {
           modules={[Navigation, Pagination]}
         >
           {sales.map((sale, index) => (
-            <SwiperSlide key={`sale-${index}`}>
-              <div className="h-[400px] rounded-2xl">
+            <SwiperSlide key={`sale-${index}`} className="relative">
+              <div className="w-full h-[400px] rounded-2xl">
                 <Image
                   src={sale.image}
                   alt={sale.name}
@@ -51,7 +64,7 @@ function Sales() {
               </div>
 
               <div>
-                <h1 className="mt-4 text-base">{sale.name}</h1>
+                <h1 className="mt-4 text-1">{sale.name}</h1>
 
                 <div className="flex gap-1 mt-2">
                   {[...Array(4)].map((_, index) => (
@@ -72,9 +85,13 @@ function Sales() {
                 </div>
 
                 <div className="flex items-center gap-4 mt-2">
-                  <h1 className="text-[1.5rem]">${sale.sale}</h1>
-                  <h2 className="text-[1.2rem] line-through">${sale.price}</h2>
+                  <h1 className="text-1.5">${sale.sale}</h1>
+                  <h2 className="text-1.2 line-through">${sale.price}</h2>
                 </div>
+              </div>
+
+              <div className="absolute left-8 top-8 p-2 text-1 text-white bg-primary rounded-lg">
+                {Math.round(((sale.price - sale.sale) / sale.price) * 100)}%
               </div>
             </SwiperSlide>
           ))}

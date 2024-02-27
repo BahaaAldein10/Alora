@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col h-screen">
-      <main className="flex-1 bg-hero-banner bg-cover bg-center bg-no-repeat">
+    <div className="flex flex-col">
+      <main className="flex-1 lg:bg-hero-banner bg-background">
         <Header />
         {children}
       </main>

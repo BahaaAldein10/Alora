@@ -38,7 +38,7 @@ export const services = [
   },
   {
     name: "Online Support 24/7",
-    description: "24/7 Technical Support",
+    description: "24/7 technical support",
     image: "/services/support.png",
   },
   {

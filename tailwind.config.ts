@@ -18,20 +18,21 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        2.5: "2.5rem",
+        2: "2rem",
+        1.5: "1.5rem",
+        1.2: "1.2rem",
+        1: "1rem",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        black: "#000000",
         white: "#FFFFFF",
-        grey: {
-          600: "#545454", // Subdued - color name in figma
-          500: "#757575",
-          400: "#AFAFAF", // Disabled - color name in figma
-          50: "#F6F6F6", // White Grey - color name in figma
-        },
+        black: "#000000",
         primary: {
           DEFAULT: "#ff0040",
           foreground: "hsl(var(--primary-foreground))",
@@ -62,8 +63,8 @@ const config = {
         },
       },
       backgroundImage: {
-        "hero-banner": "url('/banners/hero_banner.jpg')",
-        "footer-banner": "url('/img/footer-texture.png')",
+        "hero-banner": "url('/banners/hero_banner.png')",
+        "footer-banner": "url('/banners/footer_banner.png')",
       },
       borderRadius: {
         lg: "var(--radius)",

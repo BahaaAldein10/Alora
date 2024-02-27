@@ -5,8 +5,8 @@ type TitleProps = {
 
 function Title({ mainTitle, subTitle }: TitleProps) {
   return (
-    <div className="w-full text-center">
-      <h1 className="text-[2rem]">
+    <div className="mb-5 text-center">
+      <h1 className="text-2">
         <span className="text-primary">{mainTitle}</span> {subTitle}
       </h1>
     </div>
