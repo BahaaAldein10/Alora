@@ -69,12 +69,19 @@ function Header() {
         </SignedIn>
 
         <SignedOut>
-          <Button asChild>
-            <Link href="/sign-in">Login</Link>
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button asChild>
+              <Link href="/sign-in">Login</Link>
+            </Button>
 
-          <div onClick={handleMenu} className="lg:hidden block">
-            <Image src="/elements/menu.png" alt="menu" width={28} height={28} />
+            <div onClick={handleMenu} className="lg:hidden block">
+              <Image
+                src="/elements/menu.png"
+                alt="menu"
+                width={28}
+                height={28}
+              />
+            </div>
           </div>
         </SignedOut>
       </div>

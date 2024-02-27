@@ -85,6 +85,7 @@
 
 body {
   background-color: #f5f5f5;
+  overflow-y: hidden;
 }
 
 img {
@@ -105,7 +106,7 @@ img {
   }
 
   .bg-background {
-    @apply bg-center bg-cover bg-no-repeat bg-transparent;
+    @apply bg-center sm:bg-cover bg-no-repeat bg-transparent;
   }
 }
 

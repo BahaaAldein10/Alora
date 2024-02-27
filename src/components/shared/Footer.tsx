@@ -16,7 +16,7 @@ function Footer() {
         </Link>
 
         {/* =======| NAVBAR |======= */}
-        <ul className="flex-center gap-2 mt-4">
+        <ul className="flex-center max-sm:flex-col gap-2 mt-4">
           {navLinks.map((link, index) => {
             return (
               <li key={`link-${index}`} className="relative sm:p-2">
