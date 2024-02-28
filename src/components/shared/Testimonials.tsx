@@ -1,4 +1,7 @@
+"use client";
+
 import { testemonials } from "@/constants";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Title from "./Title";
 
@@ -12,9 +15,13 @@ function Testimonials() {
         {/* =======| CARDS |======= */}
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           {testemonials.map((testemonial, index) => (
-            <div
+            <motion.div
               key={`testemonial-${index}`}
-              className="relative p-5 bg-white rounded-2xl shadow-lg"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative p-5 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
             >
               <div className="flex items-center gap-4 w-full">
                 <Image
@@ -42,7 +49,7 @@ function Testimonials() {
                 height={40}
                 className="absolute top-5 right-5"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

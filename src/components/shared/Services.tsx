@@ -1,4 +1,7 @@
+"use client";
+
 import { services } from "@/constants";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 function Services() {
@@ -8,9 +11,13 @@ function Services() {
         {/* =======| GRID |======= */}
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={`service-${index}`}
-              className="p-5 bg-white rounded-2xl shadow-lg"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="p-5 bg-white rounded-2xl shadow-md hover:shadow-lg"
             >
               <div className="flex-center gap-2">
                 <Image
@@ -23,7 +30,7 @@ function Services() {
               </div>
 
               <h2 className="mt-2 text-center text-1">{service.description}</h2>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

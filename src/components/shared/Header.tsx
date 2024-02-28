@@ -1,8 +1,9 @@
 "use client";
 
 import { navLinks } from "@/constants";
+import { navVariants } from "@/lib/utils";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,13 @@ function Header() {
   };
 
   return (
-    <header className="lg:translate-y-4 w-full">
+    <motion.header
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="lg:translate-y-4 translate-y-0 w-full"
+    >
       <div className="max-lg:container flex-between m-auto w-[80%] px-4 py-2 bg-white lg:rounded-2xl shadow-lg z-10">
         {/* =======| LOGO |======= */}
         <Link href="/" className="flex items-center gap-2 w-fit">
@@ -37,9 +44,7 @@ function Header() {
               <li key={`link-${index}`} className="relative p-2">
                 <Link
                   href={link.route}
-                  className={`${
-                    isActive && "text-primary"
-                  } text-1 hover:text-primary duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-1 before:bg-pritext-primary before:rounded-2xl hover:before:w-full before:duration-300`}
+                  className="text-1 text-black hover:text-primary duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-1 before:bg-primary before:rounded-2xl hover:before:w-full before:duration-300"
                 >
                   {link.label}
                 </Link>
@@ -63,6 +68,7 @@ function Header() {
                 alt="menu"
                 width={28}
                 height={28}
+                className="cursor-pointer"
               />
             </div>
           </div>
@@ -80,6 +86,7 @@ function Header() {
                 alt="menu"
                 width={28}
                 height={28}
+                className="cursor-pointer"
               />
             </div>
           </div>
@@ -91,7 +98,7 @@ function Header() {
       <AnimatePresence mode="wait">
         {isActive && <Menu handleClick={handleClick} />}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
 

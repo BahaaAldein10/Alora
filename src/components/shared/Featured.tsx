@@ -1,4 +1,7 @@
+"use client";
+
 import { features } from "@/constants";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Title from "./Title";
 
@@ -12,13 +15,19 @@ function Featured() {
         {/* =======| GRID |======= */}
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
           {features.map((feature, index) => (
-            <div key={`feature-${index}`}>
-              <div className="w-full h-[400px] rounded-2xl">
-                <Image
+            <motion.div
+              key={`feature-${index}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: index < 4 ? 0.5 : 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <div className="w-full h-[400px] rounded-2xl cursor-pointer overflow-hidden">
+                <motion.img
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ ease: "easeInOut" }}
                   src={feature.image}
                   alt={feature.name}
-                  width={1000}
-                  height={1000}
                   className="w-full h-full rounded-2xl"
                 />
               </div>
@@ -46,7 +55,7 @@ function Featured() {
 
                 <h2 className="mt-2 text-1.5">${feature.price}</h2>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
