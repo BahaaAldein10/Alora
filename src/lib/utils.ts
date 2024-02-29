@@ -12,7 +12,7 @@ export const handleError = (error: unknown) => {
 
 /* =======| FRAMER MOTION |======= */
 
-export const navVariants = {
+export const navVariantsDesktop = {
   hidden: {
     opacity: 0,
     y: -50,
@@ -25,6 +25,26 @@ export const navVariants = {
   show: {
     opacity: 1,
     y: 16,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+    },
+  },
+};
+
+export const navVariantsMobile = {
+  hidden: {
+    opacity: 0,
+    y: -50,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 140,
+    },
+  },
+  show: {
+    opacity: 1,
+    y: 0,
     transition: {
       type: "spring",
       stiffness: 80,

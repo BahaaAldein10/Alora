@@ -1,10 +1,17 @@
 "use client";
 
 import { categories } from "@/constants";
+import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-function Categories() {
+interface MediaProps {
+  loading?: boolean;
+}
+
+function Categories(props: MediaProps) {
+  const { loading = false } = props;
+
   return (
     <section id="categories" className="w-full">
       <div className="container">
@@ -20,13 +27,22 @@ function Categories() {
                 category.colSpan ? "sm:col-span-2" : ""
               } w-full rounded-2xl`}
             >
-              <Image
-                src={category.image}
-                alt={category.name}
-                width={1000}
-                height={1000}
-                className="rounded-2xl"
-              />
+              {loading ? (
+                <Skeleton
+                  animation="wave"
+                  width="100%"
+                  height="400px"
+                  style={{ borderRadius: 16 }}
+                />
+              ) : (
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  width={1000}
+                  height={1000}
+                  className="rounded-2xl"
+                />
+              )}
             </motion.div>
           ))}
         </div>

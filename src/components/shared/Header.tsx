@@ -1,7 +1,9 @@
 "use client";
 
 import { navLinks } from "@/constants";
-import { navVariants } from "@/lib/utils";
+import { useMediaQuery } from "@mui/material";
+// import { navVariants } from "@/lib/utils";
+import { navVariantsDesktop, navVariantsMobile } from "@/lib/utils";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
@@ -22,13 +24,15 @@ function Header() {
     setIsActive(false);
   };
 
+  const isDesktop = useMediaQuery("(min-width:1024px)");
+
   return (
     <motion.header
-      variants={navVariants}
+      variants={isDesktop ? navVariantsDesktop : navVariantsMobile}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="lg:translate-y-4 translate-y-0 w-full"
+      className="w-full"
     >
       <div className="max-lg:container flex-between m-auto w-[80%] px-4 py-2 bg-white lg:rounded-2xl shadow-lg z-10">
         {/* =======| LOGO |======= */}

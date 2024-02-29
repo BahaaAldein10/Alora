@@ -18,10 +18,11 @@ function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex-center gap-2 m-auto w-fit"
         >
-          <Image src="/elements/logo.png" alt="logo" width={40} height={40} />
-          <h1 className="text-2 text-white">Alora</h1>
+          <Link href="/" className="flex-center gap-2 m-auto w-fit">
+            <Image src="/elements/logo.png" alt="logo" width={40} height={40} />
+            <h1 className="text-2 text-white">Alora</h1>
+          </Link>
         </motion.div>
 
         {/* =======| NAVBAR |======= */}

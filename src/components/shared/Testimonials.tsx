@@ -1,11 +1,18 @@
 "use client";
 
 import { testemonials } from "@/constants";
+import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Title from "./Title";
 
-function Testimonials() {
+interface MediaProps {
+  loading?: boolean;
+}
+
+function Testimonials(props: MediaProps) {
+  const { loading = false } = props;
+
   return (
     <section id="testimonials">
       <div className="container">
@@ -24,23 +31,48 @@ function Testimonials() {
               className="relative p-5 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
             >
               <div className="flex items-center gap-4 w-full">
-                <Image
-                  src={testemonial.image}
-                  alt={testemonial.name}
-                  width={80}
-                  height={80}
-                  className="rounded-full"
-                />
+                {loading ? (
+                  <Skeleton
+                    animation="wave"
+                    variant="circular"
+                    width={80}
+                    height={80}
+                  />
+                ) : (
+                  <Image
+                    src={testemonial.image}
+                    alt={testemonial.name}
+                    width={80}
+                    height={80}
+                    className="rounded-full"
+                  />
+                )}
 
-                <div>
-                  <h1 className="text-1.5">{testemonial.name}</h1>
-                  <h2 className="text-1">{testemonial.occupation}</h2>
+                <div className="w-screen">
+                  {loading ? (
+                    <Skeleton animation="wave" width="60%" height={16} />
+                  ) : (
+                    <h1 className="text-1.5">{testemonial.name}</h1>
+                  )}
+
+                  {loading ? (
+                    <Skeleton animation="wave" width="60%" height={16} />
+                  ) : (
+                    <h2 className="text-1">{testemonial.occupation}</h2>
+                  )}
                 </div>
               </div>
 
-              <h3 className="mt-4 text-1 text-[#333333]">
-                {testemonial.comment}
-              </h3>
+              {loading ? (
+                <>
+                  <Skeleton animation="wave" width="100%" height={16} />
+                  <Skeleton animation="wave" width="80%" height={16} />
+                </>
+              ) : (
+                <h3 className="mt-4 text-1 text-[#333333]">
+                  {testemonial.comment}
+                </h3>
+              )}
 
               <Image
                 src="/elements/quote.png"

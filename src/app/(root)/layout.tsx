@@ -5,7 +5,6 @@ import Header from "@/components/shared/Header";
 import Sales from "@/components/shared/Sales";
 import Services from "@/components/shared/Services";
 import Testimonials from "@/components/shared/Testimonials";
-
 export default function RootLayout({
   children,
 }: {
