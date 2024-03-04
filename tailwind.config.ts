@@ -25,6 +25,9 @@ const config = {
         1.2: "1.2rem",
         1: "1rem",
       },
+      fontFamily: {
+        myFont: ["var(--font-variable)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -38,7 +41,7 @@ const config = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#E5E4EB",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -65,6 +68,7 @@ const config = {
       backgroundImage: {
         "hero-banner": "url('/banners/hero_banner.png')",
         "footer-banner": "url('/banners/footer_banner.png')",
+        "products-banner": "url('/banners/products_banner.png')",
       },
       borderRadius: {
         lg: "var(--radius)",

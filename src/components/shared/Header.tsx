@@ -1,25 +1,25 @@
 "use client";
 
 import { navLinks } from "@/constants";
-import { useMediaQuery } from "@mui/material";
-// import { navVariants } from "@/lib/utils";
 import { navVariantsDesktop, navVariantsMobile } from "@/lib/utils";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Badge, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import Menu from "./Menu";
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
+  const pathName = usePathname();
 
   const handleMenu = () => {
     setIsActive(true);
   };
-
   const handleClick = () => {
     setIsActive(false);
   };
@@ -44,16 +44,22 @@ function Header() {
         {/* =======| NAVBAR |======= */}
         <SignedIn>
           <ul className="lg:flex hidden items-center gap-2">
-            {navLinks.map((link, index) => (
-              <li key={`link-${index}`} className="relative p-2">
-                <Link
-                  href={link.route}
-                  className="text-1 text-black hover:text-primary duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-1 before:bg-primary before:rounded-2xl hover:before:w-full before:duration-300"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link, index) => {
+              const isActive = pathName === link.route;
+
+              return (
+                <li key={`link-${index}`} className="relative p-2">
+                  <Link
+                    href={link.route}
+                    className={`${
+                      isActive ? "text-primary" : "text-black"
+                    } text-1 hover:text-primary duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-1 before:bg-primary before:rounded-2xl hover:before:w-full before:duration-300`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </SignedIn>
 
@@ -61,7 +67,9 @@ function Header() {
         <SignedIn>
           <div className="flex items-center gap-4">
             <Link href="/checkout">
-              <ShoppingCart size={28} />
+              <Badge badgeContent={4}>
+                <ShoppingCart size={28} />
+              </Badge>
             </Link>
 
             <UserButton afterSignOutUrl="/" />

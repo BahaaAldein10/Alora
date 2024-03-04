@@ -74,15 +74,6 @@
   list-style: none;
 }
 
-:root {
-  --primary: #ff0040;
-}
-
-::selection {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
 body {
   background-color: #f5f5f5;
   overflow-x: hidden;
@@ -106,23 +97,38 @@ img {
   }
 
   .bg-background {
-    @apply bg-center sm:bg-cover bg-no-repeat bg-transparent;
+    @apply bg-center bg-cover bg-no-repeat bg-transparent;
   }
 }
 
 /* =======| SWIPER |======= */
 
 .swiper {
-  height: 550px;
+  @apply h-[550px];
 }
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  color: var(--primary);
+  @apply text-primary;
 }
 .swiper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  @apply w-[10px] h-[10px];
 }
 .swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
+  @apply bg-primary bg-top;
+}
+
+/* =======| SHADCN UI |======= */
+.input-field {
+  @apply px-4 py-3 w-1/2 h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+}
+.select-field {
+  @apply px-5 py-3 w-1/2 h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+}
+.select-item {
+  @apply py-3 cursor-pointer focus:bg-secondary !important;
+}
+
+/* =======| MATERIAL UI |======= */
+.css-dlwkee-MuiBadge-badge {
+  @apply text-white bg-primary font-myFont !important;
 }

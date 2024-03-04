@@ -1,6 +1,5 @@
 import Categories from "@/components/shared/Categories";
 import Featured from "@/components/shared/Featured";
-import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import Sales from "@/components/shared/Sales";
 import Services from "@/components/shared/Services";
@@ -21,7 +20,6 @@ export default function RootLayout({
       <Featured />
       <Sales />
       <Testimonials />
-      <Footer />
     </div>
   );
 }

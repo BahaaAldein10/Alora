@@ -52,7 +52,7 @@ export default function Home() {
             className="w-fit"
           >
             <Button asChild className="mt-4">
-              <Link href="/">Shop now</Link>
+              <Link href="/shop">Shop now</Link>
             </Button>
           </motion.div>
 

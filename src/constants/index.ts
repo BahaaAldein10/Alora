@@ -9,19 +9,19 @@ export const navLinks = [
   },
   {
     label: "Categories",
-    route: "#categories",
+    route: "/#categories",
   },
   {
     label: "Featured",
-    route: "#featured",
+    route: "/#featured",
   },
   {
     label: "Sales",
-    route: "#sales",
+    route: "/#sales",
   },
   {
     label: "Testimonials",
-    route: "#testimonials",
+    route: "/#testimonials",
   },
 ];
 

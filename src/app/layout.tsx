@@ -1,9 +1,13 @@
+import Footer from "@/components/shared/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const myFont = localFont({ src: "../fonts/BalooBhaijaan2-Bold.ttf" });
+const myFont = localFont({
+  src: "../fonts/BalooBhaijaan2-Bold.ttf",
+  variable: "--font-variable",
+});
 
 export const metadata: Metadata = {
   title: "Alora",
@@ -22,7 +26,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={myFont.className}>{children}</body>
+        <body className={myFont.className}>
+          {children}
+          <Footer />
+        </body>
       </html>
     </ClerkProvider>
   );
