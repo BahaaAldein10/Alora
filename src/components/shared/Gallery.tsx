@@ -13,9 +13,9 @@ interface GalleryProps {
 }
 
 function Gallery({ loading = false, searchQuery = "" }: GalleryProps) {
-  const filteredFeatures = features.filter((feature) =>
-    feature.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // const filteredFeatures = features.filter((feature) =>
+  //   feature.name.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
 
   return (
     <section className="p-5 pr-0 w-full">
@@ -27,7 +27,7 @@ function Gallery({ loading = false, searchQuery = "" }: GalleryProps) {
 
       {/* =======| GRID |======= */}
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-5">
-        {filteredFeatures.map((feature, index) => (
+        {features.map((feature, index) => (
           <motion.div
             key={`feature-${index}`}
             initial={{ opacity: 0, scale: 0.8 }}
