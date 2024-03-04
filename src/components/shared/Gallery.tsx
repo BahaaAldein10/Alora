@@ -9,14 +9,9 @@ import Search from "./Search";
 
 interface GalleryProps {
   loading?: boolean;
-  searchQuery: string;
 }
 
-function Gallery({ loading = false, searchQuery = "" }: GalleryProps) {
-  // const filteredFeatures = features.filter((feature) =>
-  //   feature.name.toLowerCase().includes(searchQuery.toLowerCase())
-  // );
-
+function Gallery({ loading = false }: GalleryProps) {
   return (
     <section className="p-5 pr-0 w-full">
       {/* =======| FILTERS |======= */}
