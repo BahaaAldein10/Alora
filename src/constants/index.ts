@@ -241,30 +241,3 @@ export const socials = [
     image: "/socials/gmail.png",
   },
 ];
-
-export const sideBar = [
-  {
-    name: "All",
-    image: "/elements/select.png",
-  },
-  {
-    name: "Dresses",
-    image: "/elements/dress.png",
-  },
-  {
-    name: "Bottoms",
-    image: "/elements/skirt.png",
-  },
-  {
-    name: "Makeup",
-    image: "/elements/makeup.png",
-  },
-  {
-    name: "Shoes",
-    image: "/elements/shoes.png",
-  },
-  {
-    name: "Accessories",
-    image: "/elements/necklace.png",
-  },
-];
