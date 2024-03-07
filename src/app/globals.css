@@ -119,10 +119,13 @@ img {
 
 /* =======| SHADCN UI |======= */
 .input-field {
-  @apply px-4 py-3 w-1/2 h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+  @apply px-4 py-3 w-full h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
 }
 .select-field {
-  @apply px-5 py-3 w-1/2 h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+  @apply px-5 py-3 w-full h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+}
+.focus\:ring-offset-2:focus {
+  --tw-ring-offset-width: 0 !important;
 }
 .select-item {
   @apply py-3 cursor-pointer focus:bg-secondary !important;

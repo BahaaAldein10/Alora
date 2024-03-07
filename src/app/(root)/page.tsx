@@ -48,6 +48,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 1.3 }}
             className="w-fit"
           >

@@ -35,6 +35,7 @@ function Search() {
 
   return (
     <Input
+      type="text"
       placeholder="Search..."
       className="input-field"
       onChange={(e) => setQuery(e.target.value)}
