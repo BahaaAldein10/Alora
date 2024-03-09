@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <div className="flex flex-col">
       <main className="flex-1 lg:bg-hero-banner bg-background">
-        <Header />
+        <Header headerStyles="bg-white shadow-lg" />
         {children}
       </main>
       <Services />

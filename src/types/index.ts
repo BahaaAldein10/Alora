@@ -10,9 +10,22 @@ export type RemoveUrlQueryParams = {
   keysToRemove: string[];
 };
 
+export type SearchParamProps = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 /* =======| CATEGORY PARAMS |======= */
 export type CreateCategoryParams = {
   categoryName: string;
+};
+
+/* =======| PRODUCT PARAMS |======= */
+export type GetAllProductsParams = {
+  query: string;
+  limit: number;
+  page: number;
+  category: string;
 };
 
 /* =======| ORDER PARAMS |======= */

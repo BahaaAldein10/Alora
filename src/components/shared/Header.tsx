@@ -13,7 +13,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import Menu from "./Menu";
 
-function Header() {
+function Header({ headerStyles }: { headerStyles?: string }) {
   const [isActive, setIsActive] = useState(false);
   const pathName = usePathname();
 
@@ -34,7 +34,9 @@ function Header() {
       viewport={{ once: true }}
       className="w-full"
     >
-      <div className="max-lg:container flex-between m-auto w-[80%] px-4 py-2 bg-white lg:rounded-2xl shadow-lg z-10">
+      <div
+        className={`${headerStyles} max-lg:container flex-between m-auto w-[80%] px-4 py-2 lg:rounded-2xl z-10`}
+      >
         {/* =======| LOGO |======= */}
         <Link href="/" className="flex items-center gap-2 w-fit">
           <Image src="/elements/logo.png" alt="logo" width={40} height={40} />

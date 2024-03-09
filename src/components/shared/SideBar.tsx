@@ -1,24 +1,10 @@
 "use client";
 
-import { getAllCategories } from "@/lib/actions/category.actions";
-import { ICategory } from "@/lib/database/models/category.model";
+import { sideBar } from "@/constants";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { Separator } from "../ui/separator";
 
 function SideBar() {
-  const [categories, setCategories] = useState<ICategory[]>([]);
-
-  useEffect(() => {
-    const getCategories = async () => {
-      const categoryList = await getAllCategories();
-
-      categoryList && setCategories(categoryList as ICategory[]);
-    };
-
-    getCategories();
-  }, []);
-
   return (
     <aside className="sticky top-5 left-0 p-5 w-1/4 h-fit bg-white rounded-2xl">
       <div className="flex-center gap-2">
@@ -31,9 +17,9 @@ function SideBar() {
       <Separator className="my-4 h-[2px]" />
 
       <ul className="flex flex-col">
-        {categories.map((category) => (
+        {sideBar.map((category, index) => (
           <li
-            key={category._id}
+            key={`category-${index}`}
             className="flex categorys-center gap-2 p-3 hover:bg-secondary rounded-2xl cursor-pointer"
           >
             <Image
