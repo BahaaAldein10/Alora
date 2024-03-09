@@ -132,6 +132,6 @@ img {
 }
 
 /* =======| MATERIAL UI |======= */
-.css-dlwkee-MuiBadge-badge {
+.MuiBadge-badge {
   @apply text-white bg-primary font-myFont !important;
 }
