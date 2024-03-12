@@ -268,3 +268,4 @@ export const sideBar = [
     image: "/elements/necklace.png",
   },
 ];
+

@@ -4,6 +4,7 @@ import { IProduct } from "@/lib/database/models/product.model";
 import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface GalleryProps {
   loading?: boolean;
@@ -26,17 +27,17 @@ function Gallery({
   urlParamName,
 }: GalleryProps) {
   return (
-    <section className="w-full">
+    <section className="mt-5 w-full">
       {/* =======| GRID |======= */}
       {data.length > 0 ? (
-        <div className="grid lg:grid-cols-4 md:grid-col-3 sm:grid-cols-2 grid-cols-1 gap-4 mt-5">
+        <div className="grid lg:grid-cols-4 md:grid-col-3 sm:grid-cols-2 grid-cols-1 gap-4">
           {data.map((product, index) => (
             <motion.div
               key={`product-${index}`}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: index < 4 ? 0.5 : 0.2 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5 }}
             >
               {loading ? (
                 <Skeleton
@@ -47,13 +48,15 @@ function Gallery({
                 />
               ) : (
                 <div className="w-full h-[400px] rounded-2xl cursor-pointer overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ ease: "easeInOut" }}
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="w-full h-full rounded-2xl"
-                  />
+                  <Link href={`/shop/${product._id}`}>
+                    <motion.img
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ ease: "easeInOut" }}
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="w-full h-full rounded-2xl"
+                    />
+                  </Link>
                 </div>
               )}
 
@@ -61,7 +64,7 @@ function Gallery({
                 {loading ? (
                   <Skeleton animation="wave" width="80%" height={16} />
                 ) : (
-                  <h1 className="mt-4 text-1">{product.name}</h1>
+                  <h1 className="mt-4 text-1 line-clamp-1">{product.name}</h1>
                 )}
 
                 {loading ? (
@@ -96,7 +99,7 @@ function Gallery({
           ))}
         </div>
       ) : (
-        <div className="pt-20 w-full text-center">
+        <div className="mt-5 p-20 w-full text-center bg-secondary rounded-2xl">
           <h1 className="text-1.5">{emptyTitle}</h1>
           <h1 className="text-1.2">{emptyStateSubtext}</h1>
         </div>

@@ -23,9 +23,16 @@ export type CreateCategoryParams = {
 /* =======| PRODUCT PARAMS |======= */
 export type GetAllProductsParams = {
   query: string;
+  category: string;
   limit: number;
   page: number;
-  category: string;
+};
+
+export type GetRelatedProductsByCategoryParams = {
+  categoryId: string;
+  productId: string;
+  limit?: number;
+  page: number | string;
 };
 
 /* =======| ORDER PARAMS |======= */

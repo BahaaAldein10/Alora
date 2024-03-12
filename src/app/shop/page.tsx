@@ -7,7 +7,7 @@ import { getAllProducts } from "@/lib/actions/product.actions";
 import { SearchParamProps } from "@/types";
 
 async function Shop({ searchParams }: SearchParamProps) {
-  const page = Number(searchParams?.page) || 1;
+  const page = Number(searchParams?.page || 1);
   const searchText = (searchParams?.query as string) || "";
   const category = (searchParams?.category as string) || "";
 
