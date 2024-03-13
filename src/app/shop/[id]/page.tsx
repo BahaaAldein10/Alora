@@ -11,12 +11,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function productPage({ params: { id }, searchParams }: SearchParamProps) {
+  const page = Number(searchParams?.page || 1);
+
   const product = await getProductById(id);
 
   const relatedProducts = await getRelatedProductsByCategory({
     categoryId: product.category._id,
     productId: product._id,
-    page: searchParams.page as string,
+    page,
   });
 
   return (
@@ -65,7 +67,8 @@ async function productPage({ params: { id }, searchParams }: SearchParamProps) {
             <div className="flex gap-4 mt-4">
               <Button
                 asChild
-                className="bg-transparent text-primary border-2 border-primary hover:text-white"
+                variant="outline"
+                className="text-primary border-2 border-primary hover:text-white hover:bg-primary"
               >
                 <Link href="/">Add to chart</Link>
               </Button>
@@ -85,8 +88,8 @@ async function productPage({ params: { id }, searchParams }: SearchParamProps) {
             data={relatedProducts?.data}
             emptyTitle="No Products Found"
             emptyStateSubtext="Come back later"
-            limit={8}
-            page={searchParams.page as string}
+            limit={4}
+            page={page}
             totalPages={relatedProducts?.totalPages}
           />
         </div>

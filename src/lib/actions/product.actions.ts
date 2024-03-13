@@ -28,7 +28,7 @@ export async function getProductById(productId: string) {
 
     const product = await populateProduct(Product.findById(productId));
 
-    if (!product) throw new Error("Product not found");
+    if (!product) throw new Error("Product not found!");
 
     return JSON.parse(JSON.stringify(product));
   } catch (error) {
@@ -61,7 +61,7 @@ export async function getAllProducts({
 
     const skipAmount = (Number(page) - 1) * limit;
     const productsQuery = Product.find(conditions)
-      .sort({ createdAt: "desc" })
+      .sort({ name: 1 })
       .skip(skipAmount)
       .limit(limit);
 
@@ -81,7 +81,7 @@ export async function getAllProducts({
 export async function getRelatedProductsByCategory({
   categoryId,
   productId,
-  limit = 3,
+  limit = 4,
   page = 1,
 }: GetRelatedProductsByCategoryParams) {
   try {
@@ -93,7 +93,7 @@ export async function getRelatedProductsByCategory({
     };
 
     const productsQuery = Product.find(conditions)
-      .sort({ createdAt: "desc" })
+      .sort({ name: 1 })
       .skip(skipAmount)
       .limit(limit);
 
