@@ -71,6 +71,7 @@ function Pagination({
 
           return (
             <li
+              key={`number-${index}`}
               className={`${
                 currentPage === Number(page)
                   ? "text-white bg-primary"
