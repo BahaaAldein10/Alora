@@ -47,7 +47,7 @@ export async function getAllProducts({
     await connectToDatabase();
 
     const titleCondition = query
-      ? { title: { $regex: query, $options: "i" } }
+      ? { name: { $regex: query, $options: "i" } }
       : {};
     const categoryCondition = category
       ? await getCategoryByName(category)
