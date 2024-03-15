@@ -6,7 +6,7 @@ export interface IOrder extends Document {
   totalAmount: string;
   product: {
     _id: string;
-    title: string;
+    name: string;
   };
   buyer: {
     _id: string;
@@ -19,7 +19,7 @@ export type IOrderItem = {
   _id: string;
   totalAmount: string;
   createdAt: Date;
-  productTitle: string;
+  productName: string;
   productId: string;
   buyer: string;
 };
@@ -27,7 +27,7 @@ export type IOrderItem = {
 const OrderSchema = new Schema({
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now(),
   },
   stripeId: {
     type: String,

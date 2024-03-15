@@ -14,7 +14,7 @@ function Featured(props: MediaProps) {
   const { loading = false } = props;
 
   return (
-    <section id="featured" className="w-full">
+    <section className="w-full">
       <div className="container">
         {/* =======| TITLE |======= */}
         <Title mainTitle="Featured" subTitle="Products" />

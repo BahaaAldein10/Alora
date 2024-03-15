@@ -7,10 +7,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer
-      id="footer"
-      className="flex justify-center items-end w-full sm:h-[60vh] bg-footer-banner bg-center sm:bg-cover bg-no-repeat bg-transparent"
-    >
+    <footer className="flex justify-center items-end w-full sm:h-[60vh] bg-footer-banner bg-center sm:bg-cover bg-no-repeat bg-transparent">
       <div className="container">
         {/* =======| LOGO |======= */}
         <motion.div

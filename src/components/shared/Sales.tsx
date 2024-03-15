@@ -19,7 +19,7 @@ function Sales(props: MediaProps) {
   const { loading = false } = props;
 
   return (
-    <section id="sales" className="w-full">
+    <section  className="w-full">
       <div className="container">
         {/* =======| BANNER |======= */}
         <motion.div

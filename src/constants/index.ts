@@ -8,20 +8,12 @@ export const navLinks = [
     route: "/shop",
   },
   {
-    label: "Categories",
-    route: "/#categories",
+    label: "Profile",
+    route: "/profile",
   },
   {
-    label: "Featured",
-    route: "/#featured",
-  },
-  {
-    label: "Sales",
-    route: "/#sales",
-  },
-  {
-    label: "Testimonials",
-    route: "/#testimonials",
+    label: "Contact",
+    route: "/contact",
   },
 ];
 
@@ -268,4 +260,3 @@ export const sideBar = [
     image: "/elements/necklace.png",
   },
 ];
-

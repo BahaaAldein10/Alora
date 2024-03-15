@@ -5,9 +5,12 @@ import Product from "@/lib/database/models/product.model";
 import { handleError } from "@/lib/utils";
 import {
   GetAllProductsParams,
+  GetOrdersByUserParams,
   GetRelatedProductsByCategoryParams,
 } from "@/types";
 import { connectToDatabase } from "../database/connectDB";
+import Order from "../database/models/order.model";
+import User from "../database/models/user.model";
 
 const getCategoryByName = async (name: string) => {
   return Category.findOne({ name: { $regex: name, $options: "i" } });
@@ -103,6 +106,46 @@ export async function getRelatedProductsByCategory({
     return {
       data: JSON.parse(JSON.stringify(products)),
       totalPages: Math.ceil(productsCount / limit),
+    };
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+// GET ORDERS BY USER
+export async function getOrdersByUser({
+  userId,
+  limit = 4,
+  page,
+}: GetOrdersByUserParams) {
+  try {
+    await connectToDatabase();
+
+    const skipAmount = (Number(page) - 1) * limit;
+    const conditions = { buyer: userId };
+
+    const orders = await Order.distinct("product._id")
+      .find(conditions)
+      .sort({ createdAt: "desc" })
+      .skip(skipAmount)
+      .limit(limit)
+      .populate({
+        path: "product",
+        model: Product,
+        populate: {
+          path: "user",
+          model: User,
+          select: "_id firstName lastName",
+        },
+      });
+
+    const ordersCount = await Order.distinct("product._id").countDocuments(
+      conditions
+    );
+
+    return {
+      data: JSON.parse(JSON.stringify(orders)),
+      totalPages: Math.ceil(ordersCount / limit),
     };
   } catch (error) {
     handleError(error);

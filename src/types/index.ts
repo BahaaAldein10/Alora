@@ -37,10 +37,9 @@ export type GetRelatedProductsByCategoryParams = {
 
 /* =======| ORDER PARAMS |======= */
 export type CheckoutOrderParams = {
-  productTitle: string;
+  productName: string;
   productId: string;
-  price: string;
-  isFree: boolean;
+  price: string | number;
   buyerId: string;
 };
 

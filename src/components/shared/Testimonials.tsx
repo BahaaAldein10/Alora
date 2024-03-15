@@ -14,7 +14,7 @@ function Testimonials(props: MediaProps) {
   const { loading = false } = props;
 
   return (
-    <section id="testimonials">
+    <section>
       <div className="container">
         {/* =======| TITLE |======= */}
         <Title mainTitle="Customer" subTitle="Testimonials" />
