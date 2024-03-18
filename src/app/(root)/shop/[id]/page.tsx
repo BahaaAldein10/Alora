@@ -1,4 +1,4 @@
-import Checkout from "@/components/shared/Checkout";
+import CheckoutButton from "@/components/shared/CheckoutButton";
 import Gallery from "@/components/shared/Gallery";
 import Header from "@/components/shared/Header";
 import Title from "@/components/shared/Title";
@@ -8,14 +8,10 @@ import {
   getRelatedProductsByCategory,
 } from "@/lib/actions/product.actions";
 import { SearchParamProps } from "@/types";
-import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
 async function productPage({ params: { id }, searchParams }: SearchParamProps) {
-  const { sessionClaims } = auth();
-  const userId = sessionClaims?.userId as string;
-
   const page = Number(searchParams?.page || 1);
 
   const product = await getProductById(id);
@@ -79,7 +75,7 @@ async function productPage({ params: { id }, searchParams }: SearchParamProps) {
                 <Link href="/">Add to chart</Link>
               </Button>
 
-              <Checkout product={product} userId={userId} />
+              <CheckoutButton product={product} />
             </div>
           </div>
         </div>
