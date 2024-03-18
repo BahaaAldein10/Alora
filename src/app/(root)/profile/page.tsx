@@ -30,7 +30,7 @@ async function Profile({ searchParams }: SearchParamProps) {
           data={orderedProducts}
           emptyTitle="No Orders Found"
           emptyStateSubtext="You haven't made any orders yet."
-          limit={8}
+          limit={4}
           page={ordersPage}
           totalPages={orders?.totalPages}
           urlParamName="ordersPage"

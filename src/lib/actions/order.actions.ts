@@ -40,7 +40,7 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
       },
       mode: "payment",
       success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/shop`,
     });
 
     redirect(session.url!);
@@ -65,7 +65,7 @@ export const createOrder = async (order: CreateOrderParams) => {
   }
 };
 
-/* =======| GET ORDERS BY PRODUCT |======= */
+// GET ORDERS BY PRODUCT
 export async function getOrdersByProduct({
   searchString,
   productId,
@@ -74,7 +74,6 @@ export async function getOrdersByProduct({
     await connectToDatabase();
 
     if (!productId) throw new Error("Product ID is required");
-
     const productObjectId = new ObjectId(productId);
 
     const orders = await Order.aggregate([
@@ -128,10 +127,10 @@ export async function getOrdersByProduct({
   }
 }
 
-/* =======| GET ORDERS BY USER |======= */
+// GET ORDERS BY USER
 export async function getOrdersByUser({
   userId,
-  limit = 3,
+  limit = 4,
   page,
 }: GetOrdersByUserParams) {
   try {
@@ -149,7 +148,7 @@ export async function getOrdersByUser({
         path: "product",
         model: Product,
         populate: {
-          path: "user",
+          path: "organizer",
           model: User,
           select: "_id firstName lastName",
         },
