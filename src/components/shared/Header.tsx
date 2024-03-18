@@ -68,7 +68,7 @@ function Header({ headerStyles }: { headerStyles?: string }) {
         {/* =======| ICONS |======= */}
         <SignedIn>
           <div className="flex items-center gap-4">
-            <Link href="/checkout">
+            <Link href="/cart">
               <Badge badgeContent={4}>
                 <ShoppingCart size={28} />
               </Badge>
