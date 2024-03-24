@@ -19,14 +19,17 @@ function Contact() {
           <div className="p-10 w-[90%] h-[500px] text-white bg-gradient-to-r from-primary to-[#ff4d73] rounded-2xl">
             <h1 className="text-2">Contact Information</h1>
             <h2 className="mt-2 text-1">
-              Have questions about our products or your order? We're here to
-              help! Feel free to reach out to us using the following contact
+              Have questions about our products or your order? We&apos;re here
+              to help! Feel free to reach out to us using the following contact
               details
             </h2>
 
             <ul className="flex flex-col gap-10 mt-10">
               {contacts.map((contact, index) => (
-                <li className="flex items-center gap-5">
+                <li
+                  key={`contact-${index}`}
+                  className="flex items-center gap-5"
+                >
                   <div>
                     <Image
                       src={contact.image}
