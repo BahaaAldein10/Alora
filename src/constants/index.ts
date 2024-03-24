@@ -187,7 +187,7 @@ export const sales = [
   },
 ];
 
-export const testemonials = [
+export const testimonials = [
   {
     name: "John Doe",
     image: "/testemonials/1.jpg",
@@ -258,5 +258,23 @@ export const sideBar = [
   {
     name: "Accessories",
     image: "/elements/necklace.png",
+  },
+];
+
+export const contacts = [
+  {
+    name: "phone",
+    text: "+1 (555) 123-4567",
+    image: "/elements/phone.png",
+  },
+  {
+    name: "email",
+    text: "example@email.com",
+    image: "/elements/email.png",
+  },
+  {
+    name: "location",
+    text: "123 Main Street, Cityville, State, Country",
+    image: "/elements/location.png",
   },
 ];

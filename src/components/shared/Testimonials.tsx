@@ -1,6 +1,6 @@
 "use client";
 
-import { testemonials } from "@/constants";
+import { testimonials } from "@/constants";
 import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -21,9 +21,9 @@ function Testimonials(props: MediaProps) {
 
         {/* =======| CARDS |======= */}
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-          {testemonials.map((testemonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              key={`testemonial-${index}`}
+              key={`testimonial-${index}`}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -40,8 +40,8 @@ function Testimonials(props: MediaProps) {
                   />
                 ) : (
                   <Image
-                    src={testemonial.image}
-                    alt={testemonial.name}
+                    src={testimonial.image}
+                    alt={testimonial.name}
                     width={80}
                     height={80}
                     className="rounded-full"
@@ -52,13 +52,13 @@ function Testimonials(props: MediaProps) {
                   {loading ? (
                     <Skeleton animation="wave" width="60%" height={16} />
                   ) : (
-                    <h1 className="text-1.5">{testemonial.name}</h1>
+                    <h1 className="text-1.5">{testimonial.name}</h1>
                   )}
 
                   {loading ? (
                     <Skeleton animation="wave" width="60%" height={16} />
                   ) : (
-                    <h2 className="text-1">{testemonial.occupation}</h2>
+                    <h2 className="text-1">{testimonial.occupation}</h2>
                   )}
                 </div>
               </div>
@@ -70,7 +70,7 @@ function Testimonials(props: MediaProps) {
                 </>
               ) : (
                 <h3 className="mt-4 text-1 text-[#333333]">
-                  {testemonial.comment}
+                  {testimonial.comment}
                 </h3>
               )}
 

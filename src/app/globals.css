@@ -135,3 +135,45 @@ img {
 .MuiBadge-badge {
   @apply text-white bg-primary font-myFont !important;
 }
+.Button {
+  @apply mt-5 w-full text-1.2 font-myFont text-white bg-primary !important;
+}
+
+/* =======| CONTACT FORM |======= */
+.input-data {
+  @apply relative w-full h-10;
+}
+.input-data input,
+.textarea textarea {
+  @apply block w-full h-full text-1 bg-transparent border-b-2 border-solid border-gray-300 outline-none;
+}
+.input-data label {
+  @apply absolute bottom-[10px] left-0 text-1 pointer-events-none transition-all duration-300 ease-in-out;
+}
+.textarea {
+  @apply h-[70px];
+}
+.textarea textarea {
+  @apply pt-10 resize-none;
+}
+.textarea label {
+  @apply bottom-8 w-full bg-[#f5f5f5];
+}
+.input-data input:focus ~ label,
+.textarea textarea:focus ~ label,
+.input-data input:valid ~ label,
+.textarea textarea:valid ~ label {
+  @apply -translate-y-5 text-[14px] text-primary;
+}
+.input-data .underline {
+  @apply absolute bottom-0 w-full h-[2px];
+}
+.input-data .underline:before {
+  @apply absolute content-[""] w-full h-[2px] bg-primary scale-x-0 origin-center duration-300 ease-in-out;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before {
+  @apply scale-x-100;
+}
