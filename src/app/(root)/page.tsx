@@ -2,7 +2,6 @@ import Categories from "@/components/shared/Categories";
 import Featured from "@/components/shared/Featured";
 import Header from "@/components/shared/Header";
 import Hero from "@/components/shared/Hero";
-import Sales from "@/components/shared/Sales";
 import Services from "@/components/shared/Services";
 import Testimonials from "@/components/shared/Testimonials";
 
@@ -17,7 +16,7 @@ export default function Home() {
       <Services />
       <Categories />
       <Featured />
-      <Sales />
+      {/* <Sales /> */}
       <Testimonials />
     </>
   );
