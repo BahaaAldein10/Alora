@@ -12,7 +12,6 @@ import Stripe from "stripe";
 import { connectToDatabase } from "../database/connectDB";
 import Order from "../database/models/order.model";
 import Product from "../database/models/product.model";
-import User from "../database/models/user.model";
 import { handleError } from "../utils";
 
 export const checkoutOrder = async (order: CheckoutOrderParams) => {
@@ -73,7 +72,7 @@ export async function getOrdersByProduct({
   try {
     await connectToDatabase();
 
-    if (!productId) throw new Error("Product ID is required");
+    if (!productId) throw new Error("Product ID is required!");
     const productObjectId = new ObjectId(productId);
 
     const orders = await Order.aggregate([
@@ -147,11 +146,6 @@ export async function getOrdersByUser({
       .populate({
         path: "product",
         model: Product,
-        populate: {
-          path: "organizer",
-          model: User,
-          select: "_id firstName lastName",
-        },
       });
 
     const ordersCount = await Order.distinct("product._id").countDocuments(

@@ -7,6 +7,7 @@ import { Input } from "../ui/input";
 
 function Search() {
   const [query, setQuery] = useState("");
+
   const router = useRouter();
   const searchParams = useSearchParams();
 

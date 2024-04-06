@@ -16,7 +16,7 @@ function Contact() {
 
         {/* =======| GRID |======= */}
         <div className="grid sm:grid-cols-2 gap-4 mt-10">
-          <div className="p-10 w-[90%] h-[500px] text-white bg-gradient-to-r from-primary to-[#ff4d73] rounded-2xl">
+          <div className="p-10 sm:w-[90%] h-[500px] text-white bg-gradient-to-r from-primary to-[#ff4d73] rounded-2xl">
             <h1 className="text-2">Contact Information</h1>
             <h2 className="mt-2 text-1">
               Have questions about our products or your order? We&apos;re here
@@ -45,7 +45,7 @@ function Contact() {
             </ul>
           </div>
 
-          <form action="#" className="p-10 h-[500px]">
+          <form action="#" className="p-10 w-full sm:h-[500px]">
             <div className="grid grid-cols-2 gap-4 mb-10">
               <div className="input-data">
                 <input type="text" required />

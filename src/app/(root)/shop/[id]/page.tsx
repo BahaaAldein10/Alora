@@ -29,23 +29,21 @@ async function productPage({ params: { id }, searchParams }: SearchParamProps) {
 
       <div className="container mt-5">
         {/* =======| GRID |======= */}
-        <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           <div className="w-full h-[500px]">
             <Image
               src={product.imageUrl}
               alt="Product_Image"
               width={1000}
               height={1000}
-              className="m-auto w-[80%] h-full rounded-2xl"
+              className="m-auto lg:w-[90%] h-full rounded-2xl"
             />
           </div>
 
           <div>
             <h1 className="text-1.5">{product.name}</h1>
 
-            <h2 className="mt-2 text-1">{product.description}</h2>
-
-            <div className="flex gap-1 mt-2">
+            <div className="flex gap-1 mt-1">
               {[...Array(4)].map((_, index) => (
                 <Image
                   key={`star-${index}`}
@@ -62,6 +60,8 @@ async function productPage({ params: { id }, searchParams }: SearchParamProps) {
                 height={16}
               />
             </div>
+
+            <h2 className="mt-4 text-1">{product.description}</h2>
 
             <h3 className="mt-4 text-1.5">${product.price}</h3>
 

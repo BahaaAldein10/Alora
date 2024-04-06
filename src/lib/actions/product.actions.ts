@@ -112,41 +112,14 @@ export async function getRelatedProductsByCategory({
   }
 }
 
-// GET ORDERS BY USER
-export async function getOrdersByUser({
-  userId,
-  limit = 4,
-  page,
-}: GetOrdersByUserParams) {
+/* =======| GET PRODUCTS BY IDS |======= */
+export async function getProductsByIds(productIds: string[]) {
   try {
     await connectToDatabase();
 
-    const skipAmount = (Number(page) - 1) * limit;
-    const conditions = { buyer: userId };
+    const products = await populateProduct(Product.find({ _id: { $in: productIds } }));
 
-    const orders = await Order.distinct("product._id")
-      .find(conditions)
-      .sort({ createdAt: "desc" })
-      .skip(skipAmount)
-      .limit(limit)
-      .populate({
-        path: "product",
-        model: Product,
-        populate: {
-          path: "user",
-          model: User,
-          select: "_id firstName lastName",
-        },
-      });
-
-    const ordersCount = await Order.distinct("product._id").countDocuments(
-      conditions
-    );
-
-    return {
-      data: JSON.parse(JSON.stringify(orders)),
-      totalPages: Math.ceil(ordersCount / limit),
-    };
+    return JSON.parse(JSON.stringify(products));
   } catch (error) {
     handleError(error);
   }

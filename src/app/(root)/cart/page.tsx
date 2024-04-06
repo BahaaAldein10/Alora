@@ -30,7 +30,7 @@ function Cart() {
         {/* =======| TITLE |======= */}
         <Title mainTitle="Shopping" subTitle="Cart" />
 
-        <div className="relative grid grid-cols-3 gap-4 mt-10">
+        <div className="relative grid sm:grid-cols-3 gap-4 mt-10">
           {/* =======| ITEMS |======= */}
           <div className="col-span-2 space-y-4">
             {features.map((item, index) => (
@@ -115,9 +115,9 @@ function Cart() {
           </div>
 
           {/* =======| ORDER SUMMARY |======= */}
-          <div className="sticky top-10 left-0 p-5 h-[396px] bg-secondary rounded-lg">
-            <h1 className="mb-5 text-1.5">Order Summary</h1>
-            <Separator className="mb-5 bg-black h-[2px]" />
+          <div className="sticky top-10 left-0 p-5 max-sm:col-span-3 h-fit bg-secondary rounded-lg">
+            <h1 className="text-1.5">Order Summary</h1>
+            <Separator className="my-5 bg-black h-[2px]" />
             <div className="flex-between py-2 text-1.2">
               <h2>Sub Total</h2>
               <h2>{quantity}</h2>

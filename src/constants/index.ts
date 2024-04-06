@@ -86,106 +86,17 @@ export const categories = [
 ];
 
 export const features = [
-  {
-    name: "A Vintage Timeless Glamour",
-    image: "/dresses/6.jpg",
-    price: 615,
-    sale: 30,
-  },
-  {
-    name: "Futuristic Fantasy",
-    image: "/dresses/3.jpg",
-    price: 400,
-    sale: 23,
-  },
-  {
-    name: "Glamour High-Waisted Trousers",
-    image: "/bottoms/4.jpg",
-    price: 41,
-    sale: 10,
-  },
-  {
-    name: "Metropolitan Chic",
-    image: "/makeup/2.jpg",
-    price: 34,
-    sale: 6,
-  },
-  {
-    name: "Timeless Treasures Watch",
-    image: "/accessories/5.jpg",
-    price: 65,
-    sale: 14,
-  },
-  {
-    name: "Timeless Tuxedo Leggings",
-    image: "/bottoms/6.jpg",
-    price: 48,
-    sale: 10,
-  },
-  {
-    name: "Cityscape Adventure Backpack",
-    image: "/accessories/2.jpg",
-    price: 100,
-    sale: 18,
-  },
-  {
-    name: "Futuristic Fusion Boots",
-    image: "/shoes/7.jpg",
-    price: 30,
-    sale: 4,
-  },
+  "65ee811e4a0e87c24e1a2cc4",
+  "65ee811e4a0e87c24e1a2cc5",
+  "65ee811e4a0e87c24e1a2ccc",
+  "65ee811e4a0e87c24e1a2cd4",
+  "65ee811e4a0e87c24e1a2cd6",
+  "65ee811e4a0e87c24e1a2cdd",
+  "65ee811e4a0e87c24e1a2ce5",
+  "65ee811e4a0e87c24e1a2cea",
 ];
 
-export const sales = [
-  {
-    name: "A Vintage Timeless Glamour",
-    image: "/dresses/6.jpg",
-    price: 615,
-    sale: 600,
-  },
-  {
-    name: "Futuristic Fantasy",
-    image: "/dresses/3.jpg",
-    price: 400,
-    sale: 380,
-  },
-  {
-    name: "Glamour High-Waisted Trousers",
-    image: "/bottoms/4.jpg",
-    price: 41,
-    sale: 35,
-  },
-  {
-    name: "Metropolitan Chic",
-    image: "/makeup/2.jpg",
-    price: 34,
-    sale: 30,
-  },
-  {
-    name: "Timeless Treasures Watch",
-    image: "/accessories/5.jpg",
-    price: 65,
-    sale: 60,
-  },
-  {
-    name: "Timeless Tuxedo Leggings",
-    image: "/bottoms/6.jpg",
-    price: 48,
-    sale: 45,
-  },
-  {
-    name: "Cityscape Adventure Backpack",
-    image: "/accessories/2.jpg",
-    price: 100,
-    sale: 90,
-  },
-  {
-    name: "Futuristic Fusion Boots",
-    image: "/shoes/7.jpg",
-    price: 30,
-    sale: 25,
-  },
-];
+export const sales = [];
 
 export const testimonials = [
   {

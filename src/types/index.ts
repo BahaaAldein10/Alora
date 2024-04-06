@@ -36,6 +36,7 @@ export type GetRelatedProductsByCategoryParams = {
 };
 
 /* =======| ORDER PARAMS |======= */
+
 export type CheckoutOrderParams = {
   productName: string;
   productId: string;

@@ -1,6 +1,6 @@
-import Gallery from "@/components/shared/Gallery";
 import Header from "@/components/shared/Header";
 import Title from "@/components/shared/Title";
+import OrdersGallery from "@/components/shared/ordersGallery";
 import { getOrdersByUser } from "@/lib/actions/order.actions";
 import { IOrder } from "@/lib/database/models/order.model";
 import { SearchParamProps } from "@/types";
@@ -26,7 +26,7 @@ async function Profile({ searchParams }: SearchParamProps) {
         <Title mainTitle="My" subTitle="Orders" />
 
         {/* =======| GALLERY |======= */}
-        <Gallery
+        <OrdersGallery
           data={orderedProducts}
           emptyTitle="No Orders Found"
           emptyStateSubtext="You haven't made any orders yet."

@@ -8,7 +8,7 @@ type MenuProps = {
   handleClick: () => void;
 };
 
-export default function Menu({ handleClick }: MenuProps) {
+function Menu({ handleClick }: MenuProps) {
   return (
     <>
       <motion.div
@@ -48,3 +48,5 @@ export default function Menu({ handleClick }: MenuProps) {
     </>
   );
 }
+
+export default Menu;

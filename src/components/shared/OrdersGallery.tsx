@@ -4,7 +4,6 @@ import { IProduct } from "@/lib/database/models/product.model";
 import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import Pagination from "./Pagination";
 
@@ -19,7 +18,7 @@ interface GalleryProps {
   urlParamName?: string;
 }
 
-function Gallery({
+function OrdersGallery({
   loading = false,
   data,
   emptyTitle,
@@ -53,15 +52,13 @@ function Gallery({
                   />
                 ) : (
                   <div className="w-full h-[400px] rounded-2xl cursor-pointer overflow-hidden">
-                    <Link href={`/shop/${product._id}`}>
-                      <motion.img
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ ease: "easeInOut" }}
-                        src={product.imageUrl}
-                        alt={product.name}
-                        className="w-full h-full rounded-2xl"
-                      />
-                    </Link>
+                    <motion.img
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ ease: "easeInOut" }}
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="w-full h-full rounded-2xl"
+                    />
                   </div>
                 )}
 
@@ -123,4 +120,4 @@ function Gallery({
   );
 }
 
-export default Gallery;
+export default OrdersGallery;

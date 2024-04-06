@@ -118,6 +118,7 @@ img {
 }
 
 /* =======| SHADCN UI |======= */
+
 .input-field {
   @apply px-4 py-3 w-full h-[54px] bg-secondary rounded-2xl border-none focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
 }
@@ -132,6 +133,7 @@ img {
 }
 
 /* =======| MATERIAL UI |======= */
+
 .MuiBadge-badge {
   @apply text-white bg-primary font-myFont !important;
 }
@@ -140,6 +142,7 @@ img {
 }
 
 /* =======| CONTACT FORM |======= */
+
 .input-data {
   @apply relative w-full h-10;
 }

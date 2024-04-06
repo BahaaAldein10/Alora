@@ -1,5 +1,6 @@
 "use client";
 
+import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 
 type TitleProps = {
@@ -8,9 +9,11 @@ type TitleProps = {
 };
 
 function Title({ mainTitle, subTitle }: TitleProps) {
+  const isDesktop = useMediaQuery("(min-width:1024px)");
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 2.5 }}
+      initial={{ opacity: 0, scale: isDesktop ? 2.5 : 2.195 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{
