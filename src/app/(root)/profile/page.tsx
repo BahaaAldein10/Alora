@@ -1,6 +1,6 @@
 import Header from "@/components/shared/Header";
+import OrdersGallery from "@/components/shared/OrdersGallery";
 import Title from "@/components/shared/Title";
-import OrdersGallery from "@/components/shared/ordersGallery";
 import { getOrdersByUser } from "@/lib/actions/order.actions";
 import { IOrder } from "@/lib/database/models/order.model";
 import { SearchParamProps } from "@/types";
