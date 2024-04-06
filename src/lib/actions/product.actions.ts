@@ -5,12 +5,9 @@ import Product from "@/lib/database/models/product.model";
 import { handleError } from "@/lib/utils";
 import {
   GetAllProductsParams,
-  GetOrdersByUserParams,
   GetRelatedProductsByCategoryParams,
 } from "@/types";
 import { connectToDatabase } from "../database/connectDB";
-import Order from "../database/models/order.model";
-import User from "../database/models/user.model";
 
 const getCategoryByName = async (name: string) => {
   return Category.findOne({ name: { $regex: name, $options: "i" } });
@@ -117,7 +114,9 @@ export async function getProductsByIds(productIds: string[]) {
   try {
     await connectToDatabase();
 
-    const products = await populateProduct(Product.find({ _id: { $in: productIds } }));
+    const products = await populateProduct(
+      Product.find({ _id: { $in: productIds } })
+    );
 
     return JSON.parse(JSON.stringify(products));
   } catch (error) {
